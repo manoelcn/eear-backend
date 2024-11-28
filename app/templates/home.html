@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Página Inicial
+{% endblock %}
+
+{% block content %}
+<div class="col-md-10 mx-auto">
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-md-8">
+            <div class="input-group mb-3" style="position: relative;">
+                <!-- Campo de entrada de texto -->
+                <input type="text" class="form-control" placeholder="Digite o título que você deseja buscar"
+                    aria-label="Text input with segmented dropdown button" style="padding-right: 40px;">
+
+                <!-- Ícone de lupa posicionado no canto direito -->
+                <i class="bi bi-search lupa-icone"
+                    style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); font-size: 18px; cursor: pointer;"></i>
+
+                <!-- Botão dropdown "Action" -->
+                <button class="btn btn-outline-secondary dropdown-toggle"
+                    style="border-color: #e9e6e6; border-left: none;" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Filtros <!-- Texto do botão -->
+                </button>
+
+                <!-- Menu do dropdown -->
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="semresultado.html">Ano do Exame</a></li>
+                    <li><a class="dropdown-item" href="semresultado.html">Tipo de Notícia</a></li>
+                    <li><a class="dropdown-item" href="semresultado.html">Tipo de Curso</a></li>
+            </div>
+            <!-- card anúncios -->
+            <div class="card" style="margin-top: 25px; border-color: #e9e6e6">
+                <div class="card mx-auto cardnoticias">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <a href="noticia_detalhada.html">
+                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">EXAME DE ADMISSÃO - SARGENTO DA AERONÁUTICA 2026</h5>
+                                <p class="card-text">O processo seletivo para o Curso de Formação de Sargentos já tem
+                                    data
+                                    marcada.</p>
+                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="thin-line w-75 mx-auto">
+
+                <div class="card mx-auto cardnoticias">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <a href="noticia_detalhada.html">
+                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Inscrições abertas para o Exame de Admissão da EEAR 2025</h5>
+                                <p class="card-text">Estão abertas as inscrições para o Exame de Admissão da Escola de
+                                    Especialistas de Aeronáutica.</p>
+                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thin-line w-75 mx-auto">
+
+                <div class="card mx-auto cardnoticias">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <a href="noticia_detalhada.html">
+                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">RESULTADO FINAL DO EXAME DE ADMISSÃO DA EEAR 2024</h5>
+                                <p class="card-text"> Confira agora a lista de aprovados no Exame de Admissão da Escola
+                                    de
+                                    Especialistas de Aeronáutica para o ano de 2024.</p>
+                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thin-line w-75 mx-auto">
+
+                <div class="card mx-auto cardnoticias">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <a href="noticia_detalhada.html">
+                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">NOVAS VAGAS PARA CURSOS TÉCNICOS NA EEAR 2025</h5>
+                                <p class="card-text"> A EEAR abre novas vagas para cursos técnicos de aviação e
+                                    tecnologia.</p>
+                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="thin-line w-75 mx-auto">
+
+                <div class="card mx-auto cardnoticias">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <a href="noticia_detalhada.html">
+                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">INÍCIO DAS AULAS DO CURSO DE FORMAÇÃO DE SARGENTOS 2024</h5>
+                                <p class="card-text">As aulas do Curso de Formação de Sargentos da Aeronáutica começam
+                                    no próximo
+                                    mês.
+                                </p>
+                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
+                <nav aria-label="Page navigation example" class="mx-auto">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Voltar</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Próximo</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- card notícias -->
+                    <div class="card d-none d-md-block" style="border-color: #e9e6e6">
+                        <div class="card-header text-center" style="background-color: #ffffff;">Notícias de hoje</div>
+                        <div class="card mx-auto" style="max-width: 95%; border: none;">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="card-title">EAGS 1 2025 - 24/10/2024</h5>
+                                        <p class="card-text">
+                                            Publicação do calendário de entrevistas para os candidatos da área de
+                                            Eletrônica.
+
+
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary"></small></p>
+                                    </div>
+                                </div>
+
+                                <hr class="thin-line-03 w-75 mx-auto">
+
+                                <div class="col-md-12" style="margin-top: -15px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CFS 2 2025 - 24/10/2024</h5>
+                                        <p class="card-text">
+                                            Prazo final para a entrega de documentos para candidatos ao Curso de
+                                            Formação de
+                                            Sargentos. </p>
+                                        <p class="card-text"><small class="text-body-secondary"></small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center fw-bolder"
+                            style="background-color: #ffffff; color: #203e95;"> <a href="noticias.html"
+                                class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 30px;">
+                    <!-- card provas anteriores -->
+                    <div class="card d-none d-md-block" style="border-color: #e9e6e6">
+                        <div class="card-header text-center" style="background-color: #ffffff;">Provas anteriores</div>
+                        <div class="card mx-auto" style="max-width: 95%; border: none;">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CFS 2024</h5>
+                                        <p class="card-text">OPC01 - Cód 01 - Divulgação dos gabaritos oficiais. <a
+                                                href="static/exemploprova.pdf"
+                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                aqui</a></p>
+                                    </div>
+                                </div>
+
+                                <hr class="thin-line-03 w-75 mx-auto">
+
+                                <div class="col-md-12" style="margin-top: -15px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CFS 2023</h5>
+                                        <p class="card-text">OPC02 - Cód 02 - Divulgação dos gabaritos oficiais. <a
+                                                href="static/exemploprova.pdf"
+                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                aqui</a></p>
+                                    </div>
+                                </div>
+
+                                <hr class="thin-line-03 w-75 mx-auto">
+
+                                <div class="col-md-12" style="margin-top: -15px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CFS 2022</h5>
+                                        <p class="card-text">OPC03 - Cód 03 - Divulgação dos gabaritos oficiais.<a
+                                                href="static/exemploprova.pdf"
+                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                aqui</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center fw-bolder"
+                            style="background-color: #ffffff; color: #203e95;"> <a href="provas.html"
+                                class="nav-link">Ver todas as provas <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
