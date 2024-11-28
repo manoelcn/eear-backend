@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}Provas{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-top: 10px;"
+            class="d-flex justify-content-center" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Provas</li>
+            </ol>
+        </nav>
+        <h1 class="text-center" style="margin-top: 20px;">Lista de provas</h1>
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5 mx-auto">
+                <div class="input-group mb-3 col-md-8" style="position: relative;">
+                    <!-- Campo de entrada de texto -->
+                    <input type="text" class="form-control" placeholder="Digite o título da prova"
+                        aria-label="Text input with segmented dropdown button" style="padding-right: 40px;">
+
+                    <!-- Ícone de lupa posicionado no canto direito -->
+                    <i class="bi bi-search lupa-icone"
+                        style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); font-size: 18px; cursor: pointer;"></i>
+
+                    <!-- Botão dropdown "Action" -->
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                        style="border-color: #e9e6e6; border-left: none;" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filtros <!-- Texto do botão -->
+                    </button>
+
+                    <!-- Menu do dropdown -->
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="semresultadoprova.html">Ano do Exame</a></li>
+                        <li><a class="dropdown-item" href="semresultadoprova.html">Tipo de Curso</a></li>
+                </div>
+                <div class="card" style="margin-top: 25px; border:none">
+                    <div class="card mx-auto cardnoticias">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">CFS 2024</h5>
+                                    <p class="card-text">Divulgação dos gabaritos oficiais do Exame de Admissão para o
+                                        Curso de
+                                        Formação de Sargentos 2024. Confira suas respostas e analise seu desempenho.
+                                        <a href="static/exemploprova.pdf"
+                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                            aqui</a>
+                                    </p>
+                                    <p class="card-text"><small class="text-body-secondary">10/08/2024 às 16:00</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="thin-line w-50 mx-auto">
+
+                    <div class="card mx-auto cardnoticias">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">EAGS 2023</h5>
+                                    <p class="card-text">Os gabaritos oficiais do Exame de Admissão ao Estágio de
+                                        Adaptação à
+                                        Graduação de Sargentos 2023 já estão disponíveis. Acesse para verificar suas
+                                        respostas.
+                                        <a href="static/exemploprova.pdf"
+                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                            aqui</a>
+                                    </p>
+                                    <p class="card-text"><small class="text-body-secondary">05/07/2023 às 11:30</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="thin-line w-50 mx-auto">
+
+                    <div class="card mx-auto cardnoticias">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">CFS 2022</h5>
+                                    <p class="card-text">Publicados os gabaritos das provas do Curso de Formação de
+                                        Sargentos 2022.
+                                        Compare suas respostas com as oficiais.
+                                        <a href="static/exemploprova.pdf"
+                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                            aqui</a>
+                                    </p>
+
+                                    <p class="card-text"><small class="text-body-secondary">22/06/2022 às 09:15</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="thin-line w-50 mx-auto">
+
+                    <div class="card mx-auto cardnoticias">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">EAGS 2021</h5>
+                                    <p class="card-text">Disponíveis os gabaritos do Exame de Admissão 2021 para o EAGS.
+                                        Confira o seu
+                                        desempenho e resultados.
+                                        <a href="static/exemploprova.pdf"
+                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                            aqui</a>
+                                    </p>
+                                    <p class="card-text"><small class="text-body-secondary">15/05/2021 às 14:45</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="thin-line w-50 mx-auto">
+
+                    <div class="card mx-auto cardnoticias">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">CFS 2020</h5>
+                                    <p class="card-text">Acesse os gabaritos oficiais das provas do Exame de Admissão ao
+                                        Curso de
+                                        Formação de Sargentos 2020. Verifique as respostas corretas.
+                                        <a href="static/exemploprova.pdf"
+                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                            aqui</a>
+                                    </p>
+                                    <p class="card-text"><small class="text-body-secondary">02/04/2020 às 08:00</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
+                <nav aria-label="Page navigation example" class="mx-auto">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Voltar</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Próximo</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
