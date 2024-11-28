@@ -11,4 +11,4 @@ class NewsListView(ListView):
 class NewsDetailView(DetailView):
     model = News
     template_name = 'news_detail.html'
-    context_object_name = 'brand'
+    context_object_name = 'news'
