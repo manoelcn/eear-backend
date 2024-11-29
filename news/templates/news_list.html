@@ -37,25 +37,29 @@
                     <li><a class="dropdown-item" href="semresultadonoticia.html">Tipo de Notícia</a></li>
                     <li><a class="dropdown-item" href="semresultadonoticia.html">Tipo de Curso</a></li>
             </div>
-            <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
-                <div class="card mx-auto cardnoticias-full">
-                    <div class="row g-0">
-                        <div class="col-md-12">
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="#" class="link-underline-light link-dark">Exame de
-                                        Admissão ao Curso de Formação de
-                                        Sargento da Aeronáutica 2026</a></h3>
-                                <p class="card-text"> O processo seletivo para o Curso de Formação de Sargentos já tem
-                                    data
-                                    marcada. Inscreva-se e prepare-se para fazer parte de uma das instituições mais
-                                    respeitadas do
-                                    Brasil.</p>
-                                <p class="card-text"><small class="text-body-secondary">25/10/2024 às 09:00</small></p>
+            {% if news %}
+                {% for noticia in news %}
+                    <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
+                        <div class="card mx-auto cardnoticias-full">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><a href="#" class="link-underline-light link-dark">{{ noticia.title }}</a></h3>
+                                        <p class="card-text">{{ noticia.description }}</p>
+                                        <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
+                    <div class="card mx-auto cardnoticias-full">
+                        <p class="h5">Nenhum resultado encontrado</p>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
         <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
             <nav aria-label="Page navigation example" class="mx-auto">
