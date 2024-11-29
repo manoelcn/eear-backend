@@ -6,6 +6,84 @@ Página Inicial
 {% endblock %}
 
 {% block content %}
+<style>
+    .thin-line {
+        border-top: 0.5px solid black;
+        /* Define uma espessura menor */
+    }
+
+    .thin-line-03 {
+        border-top: 0.2px solid black;
+        /* Define uma espessura menor */
+    }
+
+    .cardnoticias {
+        max-width: 95%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        max-height: 100%;
+    }
+
+    .cardnoticias-full {
+        max-width: 80%;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border: none;
+        max-height: 100%;
+    }
+
+    .lupa-icone {
+        z-index: 10;
+        cursor: pointer;
+    }
+
+
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #86b7fe;
+    }
+
+    /* Garantir que o ícone da lupa tenha o cursor "pointer" */
+    .lupa-icone {
+        z-index: 10;
+        cursor: pointer;
+        /* Transforma o cursor em "dedinho" ao passar sobre a lupa */
+    }
+
+    /* Para o input ao focar */
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #86b7fe;
+    }
+
+    /* CSS global para garantir que o conteúdo ocupe toda a altura */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .container-fluid {
+        flex-grow: 1;
+    }
+
+    /* Estilização do footer */
+    footer {
+        background-color: #203e95;
+        color: white;
+        width: 100%;
+    }
+</style>
 <div class="col-md-10 mx-auto">
     <div class="row" style="margin-top: 25px;">
         <div class="col-md-8">
@@ -52,89 +130,6 @@ Página Inicial
                     </div>
 
                 </div>
-
-                <hr class="thin-line w-75 mx-auto">
-
-                <div class="card mx-auto cardnoticias">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <a href="noticia_detalhada.html">
-                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Inscrições abertas para o Exame de Admissão da EEAR 2025</h5>
-                                <p class="card-text">Estão abertas as inscrições para o Exame de Admissão da Escola de
-                                    Especialistas de Aeronáutica.</p>
-                                <p class="card-text"><small class="text-body-secondary"></small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="thin-line w-75 mx-auto">
-
-                <div class="card mx-auto cardnoticias">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <a href="noticia_detalhada.html">
-                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">RESULTADO FINAL DO EXAME DE ADMISSÃO DA EEAR 2024</h5>
-                                <p class="card-text"> Confira agora a lista de aprovados no Exame de Admissão da Escola
-                                    de
-                                    Especialistas de Aeronáutica para o ano de 2024.</p>
-                                <p class="card-text"><small class="text-body-secondary"></small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="thin-line w-75 mx-auto">
-
-                <div class="card mx-auto cardnoticias">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <a href="noticia_detalhada.html">
-                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">NOVAS VAGAS PARA CURSOS TÉCNICOS NA EEAR 2025</h5>
-                                <p class="card-text"> A EEAR abre novas vagas para cursos técnicos de aviação e
-                                    tecnologia.</p>
-                                <p class="card-text"><small class="text-body-secondary"></small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="thin-line w-75 mx-auto">
-
-                <div class="card mx-auto cardnoticias">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <a href="noticia_detalhada.html">
-                                <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">INÍCIO DAS AULAS DO CURSO DE FORMAÇÃO DE SARGENTOS 2024</h5>
-                                <p class="card-text">As aulas do Curso de Formação de Sargentos da Aeronáutica começam
-                                    no próximo
-                                    mês.
-                                </p>
-                                <p class="card-text"><small class="text-body-secondary"></small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
                 <nav aria-label="Page navigation example" class="mx-auto">
@@ -166,85 +161,45 @@ Página Inicial
                                         <p class="card-text">
                                             Publicação do calendário de entrevistas para os candidatos da área de
                                             Eletrônica.
-
-
                                         </p>
-                                        <p class="card-text"><small class="text-body-secondary"></small></p>
                                     </div>
                                 </div>
-
-                                <hr class="thin-line-03 w-75 mx-auto">
-
-                                <div class="col-md-12" style="margin-top: -15px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">CFS 2 2025 - 24/10/2024</h5>
-                                        <p class="card-text">
-                                            Prazo final para a entrega de documentos para candidatos ao Curso de
-                                            Formação de
-                                            Sargentos. </p>
-                                        <p class="card-text"><small class="text-body-secondary"></small></p>
-                                    </div>
+                                <div class="card-footer text-center fw-bolder"
+                                    style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'news-list' %}"
+                                        class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer text-center fw-bolder"
-                            style="background-color: #ffffff; color: #203e95;"> <a href="noticias.html"
-                                class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12" style="margin-top: 30px;">
-                    <!-- card provas anteriores -->
-                    <div class="card d-none d-md-block" style="border-color: #e9e6e6">
-                        <div class="card-header text-center" style="background-color: #ffffff;">Provas anteriores</div>
-                        <div class="card mx-auto" style="max-width: 95%; border: none;">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title">CFS 2024</h5>
-                                        <p class="card-text">OPC01 - Cód 01 - Divulgação dos gabaritos oficiais. <a
-                                                href="static/exemploprova.pdf"
-                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                aqui</a></p>
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 30px;">
+                            <!-- card provas anteriores -->
+                            <div class="card d-none d-md-block" style="border-color: #e9e6e6">
+                                <div class="card-header text-center" style="background-color: #ffffff;">Provas
+                                    anteriores</div>
+                                <div class="card mx-auto" style="max-width: 95%; border: none;">
+                                    <div class="row g-0">
+                                        <div class="col-md-12">
+                                            <div class="card-body">
+                                                <h5 class="card-title">CFS 2024</h5>
+                                                <p class="card-text">OPC01 - Cód 01 - Divulgação dos gabaritos oficiais.
+                                                    <a href="static/exemploprova.pdf"
+                                                        class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                        aqui</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <hr class="thin-line-03 w-75 mx-auto">
-
-                                <div class="col-md-12" style="margin-top: -15px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">CFS 2023</h5>
-                                        <p class="card-text">OPC02 - Cód 02 - Divulgação dos gabaritos oficiais. <a
-                                                href="static/exemploprova.pdf"
-                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                aqui</a></p>
-                                    </div>
-                                </div>
-
-                                <hr class="thin-line-03 w-75 mx-auto">
-
-                                <div class="col-md-12" style="margin-top: -15px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">CFS 2022</h5>
-                                        <p class="card-text">OPC03 - Cód 03 - Divulgação dos gabaritos oficiais.<a
-                                                href="static/exemploprova.pdf"
-                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                aqui</a></p>
-                                    </div>
+                                <div class="card-footer text-center fw-bolder"
+                                    style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'exams-list' %}"
+                                        class="nav-link">Ver todas as provas <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer text-center fw-bolder"
-                            style="background-color: #ffffff; color: #203e95;"> <a href="provas.html"
-                                class="nav-link">Ver todas as provas <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+        {% endblock %}
