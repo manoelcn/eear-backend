@@ -118,15 +118,21 @@ Página Inicial
                                 <img src="EAGS.png" class="img-fluid rounded-start" alt="...">
                             </a>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">EXAME DE ADMISSÃO - SARGENTO DA AERONÁUTICA 2026</h5>
-                                <p class="card-text">O processo seletivo para o Curso de Formação de Sargentos já tem
-                                    data
-                                    marcada.</p>
-                                <p class="card-text"><small class="text-body-secondary"></small></p>
+                        {% if news %}
+                            {% for noticia in news %}
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ noticia.title }}</h5>
+                                        <p class="card-text">{{ noticia.description }}</p>
+                                        <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication}}</small></p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div>
+                                <p>NADAAA</p>
                             </div>
-                        </div>
+                        {% endif %}
                     </div>
 
                 </div>
@@ -152,46 +158,56 @@ Página Inicial
                 <div class="col-md-12">
                     <!-- card notícias -->
                     <div class="card d-none d-md-block" style="border-color: #e9e6e6">
-                        <div class="card-header text-center" style="background-color: #ffffff;">Notícias de hoje</div>
-                        <div class="card mx-auto" style="max-width: 95%; border: none;">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title">EAGS 1 2025 - 24/10/2024</h5>
-                                        <p class="card-text">
-                                            Publicação do calendário de entrevistas para os candidatos da área de
-                                            Eletrônica.
-                                        </p>
+                        {% if news %}
+                            {% for noticia in news %}
+                                <div class="card-header text-center" style="background-color: #ffffff;">Notícias de hoje</div>
+                                <div class="card mx-auto" style="max-width: 95%; border: none;">
+                                    <div class="row g-0">
+                                        <div class="col-md-12">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ noticia.title }}</h5>
+                                                <p class="card-text">{{ noticia.description }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center fw-bolder"
+                                            style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'news-list' %}"
+                                                class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card-footer text-center fw-bolder"
-                                    style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'news-list' %}"
-                                        class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                            {% endfor %}
+                        {% else %}
+                                <div><p>NADA</p></div>
+                        {% endif %}
+                        
                     </div>
 
                     <div class="row">
                         <div class="col-md-12" style="margin-top: 30px;">
                             <!-- card provas anteriores -->
                             <div class="card d-none d-md-block" style="border-color: #e9e6e6">
-                                <div class="card-header text-center" style="background-color: #ffffff;">Provas
-                                    anteriores</div>
-                                <div class="card mx-auto" style="max-width: 95%; border: none;">
-                                    <div class="row g-0">
-                                        <div class="col-md-12">
-                                            <div class="card-body">
-                                                <h5 class="card-title">CFS 2024</h5>
-                                                <p class="card-text">OPC01 - Cód 01 - Divulgação dos gabaritos oficiais.
-                                                    <a href="static/exemploprova.pdf"
-                                                        class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                        aqui</a>
-                                                </p>
+                                {% if exams %}
+                                    {% for prova in exams %}
+                                        <div class="card-header text-center" style="background-color: #ffffff;">Provas
+                                            anteriores</div>
+                                        <div class="card mx-auto" style="max-width: 95%; border: none;">
+                                            <div class="row g-0">
+                                                <div class="col-md-12">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ prova.title }}</h5>
+                                                        <p class="card-text">{{ prova.description }}
+                                                            <a href="static/exemploprova.pdf"
+                                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                                aqui</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    {% endfor %}
+                                {% else %}
+                                        <div><p>NADAAA</p></div>
+                                {% endif %}
                                 <div class="card-footer text-center fw-bolder"
                                     style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'exams-list' %}"
                                         class="nav-link">Ver todas as provas <i class="bi bi-arrow-right"></i></a>
