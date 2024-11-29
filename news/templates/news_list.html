@@ -3,11 +3,12 @@
 {% block title %}Notícias{% endblock %}
 
 {% block content %}
+
 <div class="col-md-12 mx-auto">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-top: 10px;"
         class="d-flex justify-content-center" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Início</a></li>
             <li class="breadcrumb-item active" aria-current="page">Notícias</li>
         </ol>
     </nav>
@@ -41,8 +42,8 @@
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
-                                <h3 class="card-title"><a href="noticia_detalhada.html"
-                                        class="link-underline-light link-dark">Exame de Admissão ao Curso de Formação de
+                                <h3 class="card-title"><a href="#" class="link-underline-light link-dark">Exame de
+                                        Admissão ao Curso de Formação de
                                         Sargento da Aeronáutica 2026</a></h3>
                                 <p class="card-text"> O processo seletivo para o Curso de Formação de Sargentos já tem
                                     data
@@ -54,63 +55,6 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="thin-line w-50 mx-auto">
-
-                <div class="card mx-auto cardnoticias-full">
-                    <div class="row g-0">
-                        <div class="col-md-12">
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="noticia_detalhada.html"
-                                        class="link-underline-light link-dark">Inscrições abertas para o Exame de
-                                        Admissão da EEAR 2025.</a></h3>
-                                <p class="card-text">Estão abertas as inscrições para o Exame de Admissão da Escola de
-                                    Especialistas de Aeronáutica. Aproveite a oportunidade de se tornar um especialista
-                                    da Força
-                                    Aérea Brasileira.</p>
-                                <p class="card-text"><small class="text-body-secondary">30/11/2024 às 15:45</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="thin-line w-50 mx-auto">
-
-                <div class="card mx-auto cardnoticias-full">
-                    <div class="row g-0">
-                        <div class="col-md-12">
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="noticia_detalhada.html"
-                                        class="link-underline-light link-dark">EAGS 1 2025 - 22/10/2024 - 8847</a></h3>
-                                <p class="card-text">Urgente: Publicação do calendário de entrevistas para os candidatos
-                                    da área
-                                    de Eletrônica. Lembramos que as entrevistas ocorrerão em caráter eliminatório,
-                                    conforme edital.
-                                    Fiquem atentos ao local e horário indicados.</p>
-                                <p class="card-text"><small class="text-body-secondary">30/11/2024 às 15:45</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="thin-line w-50 mx-auto">
-
-                <div class="card mx-auto cardnoticias-full">
-                    <div class="row g-0">
-                        <div class="col-md-12">
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="noticia_detalhada.html"
-                                        class="link-underline-light link-dark">CFS 2 2025 - 22/10/2024 - 8848</a></h3>
-                                <p class="card-text">Aviso: Prazo final para a entrega de documentos para candidatos ao
-                                    Curso de
-                                    Formação de Sargentos. A entrega deve ser realizada até 31/10/2024, exclusivamente
-                                    de forma
-                                    presencial na sede da EEAR.</p>
-                                <p class="card-text"><small class="text-body-secondary">02/02/2025 às 10:30</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
