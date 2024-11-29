@@ -46,26 +46,34 @@
                         <li><a class="dropdown-item" href="semresultadoprova.html">Ano do Exame</a></li>
                         <li><a class="dropdown-item" href="semresultadoprova.html">Tipo de Curso</a></li>
                 </div>
-                <div class="card" style="margin-top: 25px; border:none">
-                    <div class="card mx-auto cardnoticias">
-                        <div class="row g-0">
-                            <div class="col-md-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">CFS 2024</h5>
-                                    <p class="card-text">Divulgação dos gabaritos oficiais do Exame de Admissão para o
-                                        Curso de
-                                        Formação de Sargentos 2024. Confira suas respostas e analise seu desempenho.
-                                        <a href="static/exemploprova.pdf"
-                                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                            aqui</a>
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">10/08/2024 às 16:00</small>
-                                    </p>
+                {% if exam %}
+                    {% for prova in exam %}
+                        <div class="card" style="margin-top: 25px; border:none">
+                            <div class="card mx-auto cardnoticias">
+                                <div class="row g-0">
+                                    <div class="col-md-12">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ prova.title }}</h5>
+                                            <p class="card-text">{{ prova.description }}
+                                                <a href="static/exemploprova.pdf"
+                                                    class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                    aqui</a>
+                                            </p>
+                                            <p class="card-text"><small class="text-body-secondary">{{ prova.date_publication }}</small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="card" style="margin-top: 25px; border:none">
+                        <div class="card mx-auto cardnoticias-full">
+                            <p class="h5">Nenhum resultado encontrado</p>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
             <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
                 <nav aria-label="Page navigation example" class="mx-auto">
