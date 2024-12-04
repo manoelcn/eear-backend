@@ -38,7 +38,6 @@ Página Inicial
         cursor: pointer;
     }
 
-
     .form-control:focus {
         outline: none;
         box-shadow: none;
@@ -84,30 +83,30 @@ Página Inicial
         width: 100%;
     }
 </style>
+
 <div class="col-md-10 mx-auto">
     <div class="row" style="margin-top: 25px;">
+        <!-- Coluna de 8 partes -->
         <div class="col-md-8">
             <div class="input-group mb-3" style="position: relative;">
                 <!-- Campo de entrada de texto -->
                 <input type="text" class="form-control" placeholder="Digite o título que você deseja buscar"
                     aria-label="Text input with segmented dropdown button" style="padding-right: 40px;">
-
                 <!-- Ícone de lupa posicionado no canto direito -->
                 <i class="bi bi-search lupa-icone"
                     style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); font-size: 18px; cursor: pointer;"></i>
-
                 <!-- Botão dropdown "Action" -->
                 <button class="btn btn-outline-secondary dropdown-toggle"
                     style="border-color: #e9e6e6; border-left: none;" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Filtros <!-- Texto do botão -->
                 </button>
-
                 <!-- Menu do dropdown -->
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="semresultado.html">Ano do Exame</a></li>
                     <li><a class="dropdown-item" href="semresultado.html">Tipo de Notícia</a></li>
                     <li><a class="dropdown-item" href="semresultado.html">Tipo de Curso</a></li>
+                </ul> <!-- Fechamento do menu dropdown -->
             </div>
             <!-- card anúncios -->
             <div class="card" style="margin-top: 25px; border-color: #e9e6e6">
@@ -124,12 +123,11 @@ Página Inicial
                             <div class="card-body">
                                 <h5 class="card-title">{{ noticia.title }}</h5>
                                 <p class="card-text">{{ noticia.description }}</p>
-                                <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
+                                <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication
+                                        }}</small></p>
                             </div>
                         </div>
                         {% endfor %}
-
-
                         {% else %}
                         <div class="card" style="margin-top: 25px; border:none; background-color: #f9f9f9;">
                             <div class="card mx-auto cardnoticias-full" style="background-color: #f9f9f9;">
@@ -143,10 +141,11 @@ Página Inicial
             {% include 'components/pagination.html' %}
         </div>
 
+        <!-- Coluna de 4 partes -->
         <div class="col-md-4">
             <div class="row">
+                <!-- Card Notícias -->
                 <div class="col-md-12">
-                    <!-- card notícias -->
                     <div class="card d-none d-md-block" style="border-color: #e9e6e6">
                         {% if news %}
                         {% for noticia in news %}
@@ -160,8 +159,9 @@ Página Inicial
                                     </div>
                                 </div>
                                 <div class="card-footer text-center fw-bolder"
-                                    style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'news-list' %}"
-                                        class="nav-link">Ver todas as notícias <i class="bi bi-arrow-right"></i></a>
+                                    style="background-color: #ffffff; color: #203e95;">
+                                    <a href="{% url 'news-list' %}" class="nav-link">Ver todas as notícias <i
+                                            class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -175,49 +175,49 @@ Página Inicial
                             </div>
                         </div>
                         {% endif %}
-
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-12" style="margin-top: 30px;">
-                            <!-- card provas anteriores -->
-                            <div class="card d-none d-md-block" style="border-color: #e9e6e6">
-                                {% if exams %}
-                                {% for prova in exams %}
-                                <div class="card-header text-center" style="background-color: #ffffff;">Provas
-                                    anteriores</div>
-                                <div class="card mx-auto" style="max-width: 95%; border: none;">
-                                    <div class="row g-0">
-                                        <div class="col-md-12">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ prova.title }}</h5>
-                                                <p class="card-text">{{ prova.description }}
-                                                    <a href="static/exemploprova.pdf"
-                                                        class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                        aqui</a>
-                                                </p>
-                                            </div>
-                                        </div>
+                <!-- Card Provas Anteriores -->
+                <div class="col-md-12" style="margin-top: 30px;">
+                    <div class="card d-none d-md-block" style="border-color: #e9e6e6">
+                        {% if exams %}
+                        {% for prova in exams %}
+                        <div class="card-header text-center" style="background-color: #ffffff;">Provas anteriores</div>
+                        <div class="card mx-auto" style="max-width: 95%; border: none;">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ prova.title }}</h5>
+                                        <p class="card-text">{{ prova.description }}
+                                            <a href="static/exemploprova.pdf"
+                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                                aqui</a>
+                                        </p>
                                     </div>
-                                </div>
-                                {% endfor %}
-                                {% else %}
-                                <div>
-                                    <div class="card" style="margin-top: 25px; border:none; background-color: #f9f9f9;">
-                                        <div class="card mx-auto cardnoticias-full" style="background-color: #f9f9f9;">
-                                            <p class="h5">Nenhum resultado encontrado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endif %}
-                                <div class="card-footer text-center fw-bolder"
-                                    style="background-color: #ffffff; color: #203e95;"> <a href="{% url 'exams-list' %}"
-                                        class="nav-link">Ver todas as provas <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div>
+                            <div class="card" style="margin-top: 25px; border:none; background-color: #f9f9f9;">
+                                <div class="card mx-auto cardnoticias-full" style="background-color: #f9f9f9;">
+                                    <p class="h5">Nenhum resultado encontrado</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="card-footer text-center fw-bolder"
+                            style="background-color: #ffffff; color: #203e95;">
+                            <a href="{% url 'exams-list' %}" class="nav-link">Ver todas as provas <i
+                                    class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        {% endblock %}
+    </div> <!-- Fechamento da row -->
+</div> <!-- Fechamento do container -->
+
+{% endblock %}
