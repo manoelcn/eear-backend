@@ -6,82 +6,92 @@
 
 <style>
     .card-title {
-    font-family: "Open Sans", sans-serif !important;
-    font-optical-sizing: auto;
-    font-weight: 800 !important;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100 !important;
-  }
-  .thin-line {
-    border-top: 0.5px solid black; /* Define uma espessura menor */
-}
+        font-family: "Open Sans", sans-serif !important;
+        font-optical-sizing: auto;
+        font-weight: 800 !important;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100 !important;
+    }
 
-.thin-line-03 {
-    border-top: 0.2px solid black; /* Define uma espessura menor */
-}
+    .thin-line {
+        border-top: 0.5px solid black;
+        /* Define uma espessura menor */
+    }
 
-.cardnoticias {
-    max-width: 95%; margin-top: 10px; margin-bottom: 10px; border: none;
-    max-height: 100%;
-}
+    .thin-line-03 {
+        border-top: 0.2px solid black;
+        /* Define uma espessura menor */
+    }
 
-.cardnoticias-full{
-    max-width: 80%; margin-top: 20px; margin-bottom: 15px; border: none;
-    max-height: 100%;
-}
+    .cardnoticias {
+        max-width: 95%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        max-height: 100%;
+    }
 
-.lupa-icone {
-    z-index: 10;
-    cursor: pointer;
-}
-  
+    .cardnoticias-full {
+        max-width: 80%;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border: none;
+        max-height: 100%;
+    }
 
-.form-control:focus {
-    outline: none;
-    box-shadow: none;
-    border-color: #86b7fe;
-}
+    .lupa-icone {
+        z-index: 10;
+        cursor: pointer;
+    }
 
-/* Garantir que o ícone da lupa tenha o cursor "pointer" */
-.lupa-icone {
-  z-index: 10;
-  cursor: pointer; /* Transforma o cursor em "dedinho" ao passar sobre a lupa */
-}
 
-/* Para o input ao focar */
-.form-control:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #86b7fe;
-}
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #86b7fe;
+    }
 
-/* CSS global para garantir que o conteúdo ocupe toda a altura */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #ffffff;
-  }
-  
-  .container-fluid {
-    flex-grow: 1;
-  }
-  
-  /* Estilização do footer */
-  footer {
-    background-color: #203e95;
-    color: white;
-    width: 100%;
-  }
+    /* Garantir que o ícone da lupa tenha o cursor "pointer" */
+    .lupa-icone {
+        z-index: 10;
+        cursor: pointer;
+        /* Transforma o cursor em "dedinho" ao passar sobre a lupa */
+    }
 
+    /* Para o input ao focar */
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #86b7fe;
+    }
+
+    /* CSS global para garantir que o conteúdo ocupe toda a altura */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #ffffff;
+    }
+
+    .container-fluid {
+        flex-grow: 1;
+    }
+
+    /* Estilização do footer */
+    footer {
+        background-color: #203e95;
+        color: white;
+        width: 100%;
+    }
 </style>
 
 <div class="col-md-12 mx-auto">
@@ -118,27 +128,29 @@ html, body {
                     <li><a class="dropdown-item" href="semresultadonoticia.html">Tipo de Curso</a></li>
             </div>
             {% if news %}
-                {% for noticia in news %}
-                    <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
-                        <div class="card mx-auto cardnoticias-full">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <h3 class="card-title"><a href="#" class="link-underline-light link-dark">{{ noticia.title }}</a></h3>
-                                        <p class="card-text">{{ noticia.description }}</p>
-                                        <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
-                                    </div>
-                                </div>
+            {% for noticia in news %}
+            <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
+                <div class="card mx-auto cardnoticias-full">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="#" class="link-underline-light link-dark">{{
+                                        noticia.title }}</a></h3>
+                                <p class="card-text">{{ noticia.description }}</p>
+                                <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication
+                                        }}</small></p>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            {% else %}
-                <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
-                    <div class="card mx-auto cardnoticias-full">
-                        <p class="h5">Nenhum resultado encontrado</p>
-                    </div>
                 </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none;">
+                <div class="card mx-auto cardnoticias-full">
+                    <p class="h5">Nenhum resultado encontrado</p>
+                </div>
+            </div>
             {% endif %}
         </div>
         <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
