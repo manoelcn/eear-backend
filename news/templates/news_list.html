@@ -4,6 +4,86 @@
 
 {% block content %}
 
+<style>
+    .card-title {
+    font-family: "Open Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 800 !important;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100 !important;
+  }
+  .thin-line {
+    border-top: 0.5px solid black; /* Define uma espessura menor */
+}
+
+.thin-line-03 {
+    border-top: 0.2px solid black; /* Define uma espessura menor */
+}
+
+.cardnoticias {
+    max-width: 95%; margin-top: 10px; margin-bottom: 10px; border: none;
+    max-height: 100%;
+}
+
+.cardnoticias-full{
+    max-width: 80%; margin-top: 20px; margin-bottom: 15px; border: none;
+    max-height: 100%;
+}
+
+.lupa-icone {
+    z-index: 10;
+    cursor: pointer;
+}
+  
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #86b7fe;
+}
+
+/* Garantir que o ícone da lupa tenha o cursor "pointer" */
+.lupa-icone {
+  z-index: 10;
+  cursor: pointer; /* Transforma o cursor em "dedinho" ao passar sobre a lupa */
+}
+
+/* Para o input ao focar */
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #86b7fe;
+}
+
+/* CSS global para garantir que o conteúdo ocupe toda a altura */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  .container-fluid {
+    flex-grow: 1;
+  }
+  
+  /* Estilização do footer */
+  footer {
+    background-color: #203e95;
+    color: white;
+    width: 100%;
+  }
+
+</style>
+
 <div class="col-md-12 mx-auto">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-top: 10px;"
         class="d-flex justify-content-center" aria-label="breadcrumb">
