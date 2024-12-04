@@ -152,20 +152,7 @@
             </div>
             {% endif %}
         </div>
-        <div class="col-md-12 d-flex justify-content-center" style="margin-top: 5px;">
-            <nav aria-label="Page navigation example" class="mx-auto">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Voltar</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">6</a></li>
-                    <li class="page-item"><a class="page-link" style="color: #212529bf;" href="#">Próximo</a></li>
-                </ul>
-            </nav>
-        </div>
+        {% include 'components/pagination.html' %}
     </div>
 </div>
 {% endblock %}
