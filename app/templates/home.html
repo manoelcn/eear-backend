@@ -115,7 +115,7 @@ Página Inicial
                     <div class="card mx-auto cardnoticias">
                         <div class="row g-0">
                             {% if news %}
-                            {% for noticia in news %}
+                            {% for noticia in news|slice:":2" %}
                             <div class="col-md-4 d-flex justify-content-center align-items-center">
                                 <a href="{% url 'news-detail' noticia.pk %}">
                                     <img src="{{ noticia.image.url }}" class="img-fluid rounded-start" alt="...">
@@ -142,7 +142,7 @@ Página Inicial
                 </div>
             </section>
         </div>
-        <!-- Side widgets-->
+
         <div class="col-lg-4">
             <div class="mb-4">
                 <div class="col-md-12">
@@ -179,7 +179,7 @@ Página Inicial
         {% endif %}
     </div>
     <br>
-    <!-- Categories widget-->
+
     <div class="card mb-4">
         <div class="catd-none d-md-block" style="border-color: #e9e6e6">
             <div class="card-header text-center fw-bolder" style="background-color: #ffffff;">Provas

@@ -4,8 +4,8 @@ from news.models import News
 
 
 def home(request):
-    exams = Exam.objects.all()
-    news = News.objects.all()
+    exams = Exam.objects.order_by('-date_publication')[:2]
+    news = News.objects.order_by('-date_publication')[:2]
 
     context = {
         'exams': exams,
