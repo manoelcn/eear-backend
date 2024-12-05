@@ -86,6 +86,16 @@
                 <!-- Ícone de lupa posicionado no canto direito -->
                 <i class="bi bi-search lupa-icone"
                     style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); font-size: 18px; cursor: pointer;"></i>
+                <button class="btn btn-outline-secondary dropdown-toggle"
+                    style="border-color: #e9e6e6; border-left: none;" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Filtros
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Ano do Exame</a></li>
+                    <li><a class="dropdown-item" href="#">Tipo de Notícia</a></li>
+                    <li><a class="dropdown-item" href="#">Tipo de Curso</a></li>
+                </ul>
             </div>
 
             {% if news %}
