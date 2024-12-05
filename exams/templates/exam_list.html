@@ -97,7 +97,7 @@
             <div class="col-md-5 mx-auto">
                 <div class="input-group mb-3 col-md-8" style="position: relative;">
                     <!-- Campo de entrada de texto -->
-                    <input type="text" class="form-control" placeholder="Digite o título da prova"
+                    <input type="text" class="form-control" id="search-input" placeholder="Digite o título da prova"
                         aria-label="Text input with segmented dropdown button" style="padding-right: 40px;">
 
                     <!-- Ícone de lupa posicionado no canto direito -->
@@ -118,7 +118,7 @@
                 </div>
                 {% if exam %}
                 {% for prova in exam %}
-                <div class="card" style="margin-top: 25px; border:none;">
+                <div class="card exam-item" style="margin-top: 25px; border:none;">
                     <div class="card mx-auto cardnoticias">
                         <div class="row g-0">
                             <div class="col-md-12">
@@ -145,9 +145,38 @@
                     </div>
                 </div>
                 {% endif %}
+                <p id="no-results-message" class="text-center fw-bolder" style="display: none;">Nenhum resultado encontrado.</p>
             </div>
             {% include 'components/pagination_list.html' %}
         </div>
     </div>
 </div>
+<script>
+    document.getElementById("search-input").addEventListener("input", function () {
+        const searchValue = this.value.toLowerCase();
+        const examItems = document.querySelectorAll(".exam-item"); // Seleciona os itens de prova
+        let hasVisibleItems = false;
+
+        examItems.forEach(item => {
+            const titleElement = item.querySelector(".card-title");
+            const title = titleElement ? titleElement.textContent.toLowerCase() : "";
+
+            // Verifica se o título contém o termo de pesquisa
+            if (title.includes(searchValue)) {
+                item.style.display = ""; // Exibe o item
+                hasVisibleItems = true;
+            } else {
+                item.style.display = "none"; // Esconde o item
+            }
+        });
+
+        // Exibe ou remove a mensagem de "Nenhum resultado encontrado"
+        const noResultsMessage = document.getElementById("no-results-message");
+        if (!hasVisibleItems) {
+            noResultsMessage.style.display = "block"; // Exibe a mensagem
+        } else {
+            noResultsMessage.style.display = "none"; // Remove a mensagem
+        }
+    });
+</script>
 {% endblock %}
