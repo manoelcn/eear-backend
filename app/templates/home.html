@@ -125,8 +125,7 @@ Página Inicial
                                 <div class="card-body">
                                     <h5 class="card-title">{{ noticia.title }}</h5>
                                     <p class="card-text">{{ noticia.description }}</p>
-                                    <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication
-                                            }}</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
                                 </div>
                             </div>
                             <hr class="thin-line w-75 mx-auto">
@@ -134,10 +133,8 @@ Página Inicial
                             {% else %}
                             <div class="col-md-4 d-flex justify-content-center align-items-center">
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <p>NENHUM RESULTADO ENCONTRADO</p>
-                                </div>
+                            <div class="card-body">
+                                <p class="card-text fw-bolder">NENHUM RESULTADO ENCONTRADO</p>
                             </div>
                             {% endif %}
                         </div>
@@ -173,64 +170,52 @@ Página Inicial
                         </div>
                     </div>
                     {% else %}
-                    <div class="card d-none d-md-block" style="border-color: #e9e6e6">
-                        <div class="card mx-auto" style="max-width: 95%; border: none;">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <p>NENHUYM RESULTADO ENCONTRADO</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-                <br>
-                <!-- Categories widget-->
-                <div class="card mb-4">
-                    <div class="d-none d-md-block" style="border-color: #e9e6e6">
-                        <div class="card-header text-center fw-bolder" style="background-color: #ffffff;">Provas
-                            anteriores</div>
-                        {% if exams %}
-                        {% for prova in exams %}
-                        <div class="card mx-auto" style="max-width: 95%; border: none;">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ prova.title }}</h5>
-                                        <p class="card-text">{{ prova.description }}
-                                            <a href="static/exemploprova.pdf"
-                                                class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
-                                                aqui</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="thin-line w-75 mx-auto">
-                        {% endfor %}
-
-                        <div class="card-footer text-center fw-bolder"
-                            style="background-color: #ffffff; color: #203e95;">
-                            <a href="{% url 'exams-list' %}" class="nav-link">Ver todas as provas <i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                        {% else %}
-                        <div class="card mx-auto" style="max-width: 95%; border: none;">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <p>NENHUM RESULTADO ENCONTRADO</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endif %}
+                    <div class="card-body">
+                        <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
                     </div>
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
+    <br>
+    <!-- Categories widget-->
+    <div class="card mb-4">
+        <div class="catd-none d-md-block" style="border-color: #e9e6e6">
+            <div class="card-header text-center fw-bolder" style="background-color: #ffffff;">Provas
+                anteriores</div>
+            {% if exams %}
+            {% for prova in exams %}
+            <div class="card mx-auto" style="max-width: 95%; border: none;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ prova.title }}</h5>
+                            <p class="card-text">{{ prova.description }}
+                                <a href="static/exemploprova.pdf"
+                                    class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
+                                    aqui</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="thin-line w-75 mx-auto">
+            {% endfor %}
 
-    {% endblock %}
+            <div class="card-footer text-center fw-bolder" style="background-color: #ffffff; color: #203e95;">
+                <a href="{% url 'exams-list' %}" class="nav-link">Ver todas as provas <i
+                        class="bi bi-arrow-right"></i></a>
+            </div>
+            {% else %}
+            <div class="card-body">
+                <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
