@@ -3,9 +3,6 @@
     <ul class="pagination justify-content-center">
         {% if news_card.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page=1">Primeira</a>
-        </li>
-        <li class="page-item">
             <a class="page-link" href="?page={{ news_card.previous_page_number }}">Anterior</a>
         </li>
         {% endif %}
@@ -19,9 +16,6 @@
         {% if news_card.has_next %}
         <li class="page-item">
             <a class="page-link" href="?page={{ news_card.next_page_number }}">Próxima</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{ news_card.paginator.num_pages }}">Última</a>
         </li>
         {% endif %}
     </ul>
