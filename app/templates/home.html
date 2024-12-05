@@ -117,7 +117,7 @@ Página Inicial
                             {% if news %}
                             {% for noticia in news %}
                             <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <a href="#">
+                                <a href="{% url 'news-detail' noticia.pk %}">
                                     <img src="{{ noticia.image.url }}" class="img-fluid rounded-start" alt="...">
                                 </a>
                             </div>

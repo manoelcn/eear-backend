@@ -124,9 +124,9 @@
 
                 <!-- Menu do dropdown -->
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="semresultadonoticia.html">Ano do Exame</a></li>
-                    <li><a class="dropdown-item" href="semresultadonoticia.html">Tipo de Notícia</a></li>
-                    <li><a class="dropdown-item" href="semresultadonoticia.html">Tipo de Curso</a></li>
+                    <li><a class="dropdown-item" href="#">Ano do Exame</a></li>
+                    <li><a class="dropdown-item" href="#">Tipo de Notícia</a></li>
+                    <li><a class="dropdown-item" href="#">Tipo de Curso</a></li>
             </div>
             {% if news %}
             {% for noticia in news %}
@@ -135,7 +135,7 @@
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
-                                <h3 class="card-title"><a href="#" class="link-underline-light link-dark">{{ noticia.title }}</a></h3>
+                                <h3 class="card-title"><a href="{% url 'news-detail' noticia.pk %}" class="link-underline-light link-dark">{{ noticia.title }}</a></h3>
                                 <p class="card-text">{{ noticia.description }}</p>
                                 <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
                             </div>
