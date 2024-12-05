@@ -192,7 +192,7 @@ Página Inicial
                         <div class="card-body">
                             <h5 class="card-title">{{ prova.title }}</h5>
                             <p class="card-text">{{ prova.description }}
-                                <a href="static/exemploprova.pdf"
+                                <a href="{{ prova.file.url }}"
                                     class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acesse
                                     aqui</a>
                             </p>
