@@ -84,6 +84,12 @@ Página Inicial
         color: white;
         width: 100%;
     }
+
+    .no-results {
+        color: red;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
 </style>
 
 <div class="container mt-5">
@@ -92,8 +98,10 @@ Página Inicial
             <article>
                 <header class="mb-4">
                     <div class="input-group mb-3" style="position: relative;">
-                        <input type="text" class="form-control" placeholder="Digite o título que você deseja buscar"
+                        <input id="search-input" type="text" class="form-control"
+                            placeholder="Digite o título que você deseja buscar"
                             aria-label="Text input with segmented dropdown button" style="padding-right: 40px;">
+
                         <i class="bi bi-search lupa-icone"
                             style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); font-size: 18px; cursor: pointer;"></i>
                         <button class="btn btn-outline-secondary dropdown-toggle"
@@ -110,35 +118,36 @@ Página Inicial
                 </header>
 
             </article>
-            <section class="mb-5">
+            <section id="news-container" class="mb-5">
                 <div class="card" style="margin-top: 25px; border-color: #e9e6e6">
-                    <div class="card mx-auto cardnoticias">
-                        <div class="row g-0">
-                            {% if news_card %}
-                            {% for noticia in news_card %}
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                <a href="{% url 'news-detail' noticia.pk %}">
-                                    <img src="{{ noticia.image.url }}" class="img-fluid rounded-start" alt="...">
-                                </a>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ noticia.title }}</h5>
-                                    <p class="card-text">{{ noticia.description }}</p>
-                                    <p class="card-text"><small class="text-body-secondary">{{ noticia.date_publication }}</small></p>
+                    <div class="row g-0">
+                        {% if news_card %}
+                        {% for noticia in news_card %}
+                        <div class="news-item col-md-12">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                    <a href="{% url 'news-detail' noticia.pk %}">
+                                        <img src="{{ noticia.image.url }}" class="img-fluid rounded-start" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ noticia.title }}</h5>
+                                        <p class="card-text">{{ noticia.description }}</p>
+                                        <p class="card-text">
+                                            <small class="text-body-secondary">{{ noticia.date_publication }}</small>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                             <hr class="thin-line w-75 mx-auto">
-                            {% endfor %}
-                            {% else %}
-                            <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text fw-bolder">NENHUM RESULTADO ENCONTRADO</p>
-                            </div>
-                            {% endif %}
-                        {% include 'components/pagination_home.html' %}
                         </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="card-body">
+                            <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </section>
@@ -219,4 +228,42 @@ Página Inicial
 </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("search-input");
+        const newsContainer = document.getElementById("news-container");
+        const newsItems = newsContainer.querySelectorAll(".news-item");
+
+        searchInput.addEventListener("input", function () {
+            const searchValue = searchInput.value.toLowerCase().trim();
+            let hasVisibleItems = false;
+
+            newsItems.forEach(item => {
+                const titleElement = item.querySelector(".card-title");
+                if (titleElement) {
+                    const title = titleElement.textContent.toLowerCase();
+                    if (title.includes(searchValue)) {
+                        item.style.display = ""; // Mostra o item
+                        hasVisibleItems = true;
+                    } else {
+                        item.style.display = "none"; // Esconde o item
+                    }
+                }
+            });
+
+            // Exibe ou remove a mensagem de "Nenhum resultado encontrado"
+            let noResultsMessage = document.querySelector(".no-results");
+            if (!hasVisibleItems) {
+                if (!noResultsMessage) {
+                    noResultsMessage = document.createElement("p");
+                    noResultsMessage.textContent = "Nenhum resultado encontrado.";
+                    noResultsMessage.className = "no-results text-center fw-bolder";
+                    newsContainer.appendChild(noResultsMessage);
+                }
+            } else if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
+        });
+    });
+</script>
 {% endblock %}
