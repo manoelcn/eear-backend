@@ -113,8 +113,8 @@
 
                     <!-- Menu do dropdown -->
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Ano do Exame</a></li>
-                        <li><a class="dropdown-item" href="#">Tipo de Curso</a></li>
+                        <li><a class="dropdown-item" href="?order_by=recent" {% if request.GET.order_by == 'recent' %}class="active"{% endif %}>Mais Recentes</a></li>
+                        <li><a class="dropdown-item" href="?order_by=old" {% if request.GET.order_by == 'old' %}class="active"{% endif %}>Mais Antigos</a></li>
                 </div>
                 {% if exam %}
                 {% for prova in exam %}
