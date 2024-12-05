@@ -3,51 +3,52 @@
 {% block title %}Notícia Detalhada{% endblock %}
 
 {% block content %}
-<div class="input-group mb-3" style="position: relative;">
-    <div class="card cardnoticias mx-auto"> <!-- Removi a classe mx-auto da card -->
-        <div class="row g-0">
-            <div class="card">
-                <img class="card-img-top" src="EAGS.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Divulgação dos gabaritos oficiais do Exame de
-                        Admissão 2024</h5>
-                    <p class="card-text">
-                        <strong>Data da Publicação:</strong> 22/10/2024<br>
-                        <strong>Fonte:</strong> Escola de Especialistas de Aeronáutica
-                        (EEAR)<br><br>
+<style>
+    .lupa-icone {
+        z-index: 10;
+        cursor: pointer;
+    }
 
-                        A EEAR informa que os gabaritos oficiais das provas do Exame de Admissão
-                        para o Curso de Formação de Sargentos 2024 já estão disponíveis para
-                        consulta. Os candidatos podem acessar os gabaritos através do portal
-                        oficial da EEAR.<br><br>
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #86b7fe;
+    }
 
-                        <strong>Detalhes Importantes:</strong><br>
+    .cardnoticias {
+        margin-top: 25px;
+    }
+</style>
 
-                    <ul>
-                        <li><strong>Acesso aos Gabaritos:</strong> Os gabaritos podem ser
-                            consultados no link <a href="provas.html" target="_blank">www.eear.gov.br/gabaritos2024</a>.
-                            É necessário
-                            ter em mãos o número de inscrição para facilitar a busca.</li>
-                        <li><strong>Prazos para Recurso:</strong> Os candidatos que desejarem
-                            contestar alguma questão do exame têm até 29/10/2024 para apresentar
-                            seus recursos. Os pedidos devem ser feitos pelo sistema de recursos
-                            disponível na plataforma da EEAR.</li>
-                        <li><strong>Resultados Finais:</strong> Os resultados finais do Exame de
-                            Admissão, após a análise dos recursos, serão divulgados no dia
-                            05/11/2024. Fiquem atentos às atualizações no site.</li>
-                        <li><strong>Orientações para o Cálculo de Desempenho:</strong> Para
-                            auxiliar os candidatos a calcular seu desempenho, disponibilizamos
-                            um guia passo a passo na seção de perguntas frequentes do site.
-                            Acesse e saiba como calcular sua nota com base nas respostas
-                            corretas.</li>
-                    </ul>
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-top: 10px;"
+    class="d-flex justify-content-center" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detalhes</li>
+    </ol>
+</nav>
+<h1 class="text-center" style="margin-top: 20px;">Detalhes</h1>
 
-                    <strong>Dúvidas?</strong><br>
-                    Caso tenha dúvidas sobre o acesso aos gabaritos ou sobre o processo de
-                    recursos, entre em contato com a Central de Atendimento da EEAR pelo
-                    telefone (XX) XXXX-XXXX ou pelo e-mail <a
-                        href="mailto:atendimento@eear.gov.br">atendimento@eear.gov.br</a>.
-                    </p>
+
+<div class="col-md-8 mx-auto"> <!-- Adicionei mx-auto aqui para centralizar a coluna -->
+    <div class="input-group mb-3" style="position: relative;">
+        <div class="card cardnoticias mx-auto"> <!-- Removi a classe mx-auto da card -->
+            <div class="row g-0">
+                <div class="card">
+                    <img class="card-img-top" src="{{ news.image.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text">
+                            <strong>Data da Publicação:</strong> {{ news.date_publication }}<br>
+                            <strong>Fonte:</strong> {{ news.source }}<br><br>
+
+                            {{ news.description }}<br><br>
+
+                            <strong>Dúvidas?</strong><br>
+                            Caso tenha dúvidas entre em contato com a Central de Atendimento da EEAR pelo
+                            telefone (XX) XXXX-XXXX ou pelo email atendimento@eear.gov.br.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
