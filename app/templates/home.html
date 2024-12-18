@@ -138,7 +138,9 @@ Página Inicial
                                     </div>
                                 </div>
                             </div>
+                            {% if not forloop.last %}
                             <hr class="thin-line w-75 mx-auto">
+                            {% endif %}
                         </div>
                         {% endfor %}
                         {% else %}
@@ -167,7 +169,9 @@ Página Inicial
                                         <p class="card-text">{{ noticia.description }}</p>
                                     </div>
                                 </div>
+                                {% if not forloop.last %}
                                 <hr class="thin-line w-75 mx-auto">
+                                {% endif %}
                                 {% endfor %}
 
                                 <div class="card-footer text-center fw-bolder"
@@ -208,7 +212,9 @@ Página Inicial
                         </div>
                     </div>
                 </div>
-            <hr class="thin-line w-75 mx-auto">
+                {% if not forloop.last %}
+                <hr class="thin-line w-75 mx-auto">
+                {% endif %}
             </div>
             {% endfor %}
 
