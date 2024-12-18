@@ -114,7 +114,9 @@
                         </div>
                     </div>
                 </div>
-                <hr class="thin-line w-75 mx-auto">
+                {% if not forloop.last %}
+                    <hr class="thin-line w-75 mx-auto">
+                {% endif %}
                 {% endfor %}
             </div>
             {% else %}
