@@ -145,7 +145,7 @@ Página Inicial
                         {% endfor %}
                         {% else %}
                         <div class="card-body">
-                            <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
+                            <p class="card-text fw-bolder text-center">Nenhuma notícia encontrada.</p>
                         </div>
                         {% endif %}
                     </div>
@@ -184,7 +184,7 @@ Página Inicial
                     </div>
                     {% else %}
                     <div class="card-body">
-                        <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
+                        <p class="card-text fw-bolder text-center">Nenhuma notícia encontrada.</p>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@ Página Inicial
             </div>
             {% else %}
             <div class="card-body">
-                <p class="card-text fw-bolder text-center">NENHUM RESULTADO ENCONTRADO</p>
+                <p class="card-text fw-bolder text-center">Nenhuma prova encontrada.</p>
             </div>
             {% endif %}
         </div>
@@ -261,7 +261,7 @@ Página Inicial
             if (!hasVisibleItems) {
                 if (!noResultsMessage) {
                     noResultsMessage = document.createElement("p");
-                    noResultsMessage.textContent = "Nenhum resultado encontrado.";
+                    noResultsMessage.textContent = "Nenhuma notícia encontrada!";
                     noResultsMessage.className = "no-results text-center fw-bolder";
                     newsContainer.appendChild(noResultsMessage);
                 }

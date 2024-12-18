@@ -64,6 +64,11 @@
         color: white;
         width: 100%;
     }
+    
+    .no-results {
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
 </style>
 
 <div class="col-md-12 mx-auto">
@@ -122,7 +127,7 @@
             {% else %}
             <div class="card col-md-12 mx-auto" style="margin-top: 25px; border: none; background-color: #f9f9f9;">
                 <div class="card mx-auto cardnoticias-full" style=" background-color: #f9f9f9;">
-                    <p class="h5">Nenhum resultado encontrado</p>
+                    <p class="h5">Nenhuma notícia encontrada.</p>
                 </div>
             </div>
             {% endif %}
@@ -155,7 +160,7 @@
             if (!noResultsMessage) {
                 const noResults = document.createElement("p");
                 noResults.className = "no-results text-center";
-                noResults.textContent = "Nenhum resultado encontrado.";
+                noResults.textContent = "Nenhuma notícia encontrada!";
                 document.getElementById("news-container").appendChild(noResults);
             }
         } else if (noResultsMessage) {
