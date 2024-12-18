@@ -136,7 +136,10 @@
                         </div>
                     </div>
                 </div>
-                <hr class="thin-line w-75 mx-auto">
+                {% if not forloop.last %}
+                    <hr class="thin-line w-75 mx-auto">
+                {% endif %}
+                
                 {% endfor %}
                 {% else %}
                 <div class="card" style="margin-top: 25px; border:none; background-color: #f9f9f9;">
